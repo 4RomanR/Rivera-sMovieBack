@@ -64,7 +64,7 @@ const setDirector = catchError (async(req, res) => {
     if(!result) return res.sendStatus(404)
 
     await result.setDirectors(req.body)
-    const results = await res.getDirectors()
+    const results = await result.getDirectors()
     return res.json(results)
 
 })
