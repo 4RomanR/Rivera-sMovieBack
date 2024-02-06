@@ -34,11 +34,16 @@ const update = catchError(async(req, res) => {
     if(result[0] === 0) return res.sendStatus(404);
     return res.json(result[1][0]);
 });
-
+//FOR ADD A LOT ACTORS
+const bulkCreatedActors = catchError(async (req, res) => {
+    const result = await Actor.bulkCreate(req.body)
+    return res.status(201).json(result)
+})
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    bulkCreatedActors
 }

@@ -34,6 +34,7 @@ const update = catchError(async(req, res) => {
     if(result[0] === 0) return res.sendStatus(404);
     return res.json(result[1][0]);
 });
+//FOR ADD A LOT GENRES
 const bulkCreatedGenres = catchError(async (req, res) => {
     const result = await Genre.bulkCreate(req.body)
 

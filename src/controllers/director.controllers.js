@@ -35,10 +35,16 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+//FOR ADD A LOT DIRECTORS
+const bulkCreateDirectors = catchError(async(req,res) => {
+    const result = await Director.bulkCreate(req.body)
+    return res.status(201).json(result)
+})
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    bulkCreateDirectors
 }

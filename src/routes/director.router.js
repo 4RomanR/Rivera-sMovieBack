@@ -1,11 +1,11 @@
-const { getAll, create, getOne, remove, update } = require('../controllers/director.controllers');
+const { getAll, getOne, remove, update, bulkCreateDirectors } = require('../controllers/director.controllers');
 const express = require('express');
 
 const routerDirector = express.Router();
 
 routerDirector.route('/')
     .get(getAll)
-    .post(create);
+    .post(bulkCreateDirectors);
 
 routerDirector.route('/:id')
     .get(getOne)
