@@ -34,11 +34,16 @@ const update = catchError(async(req, res) => {
     if(result[0] === 0) return res.sendStatus(404);
     return res.json(result[1][0]);
 });
+const bulkCreatedGenres = catchError(async (req, res) => {
+    const result = await Genre.bulkCreate(req.body)
 
+    return res.status(201).json(result)
+})
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    bulkCreatedGenres
 }
