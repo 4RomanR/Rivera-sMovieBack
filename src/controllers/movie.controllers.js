@@ -68,6 +68,11 @@ const setDirector = catchError (async(req, res) => {
     return res.json(results)
 
 })
+//FOR ADD A LOT OF MOVIES
+const bulkCreateMovies = catchError(async(req,res)=>{
+    const result = await Movie.bulkCreate(req.body)
+    return res.status(201).json(result)
+})
 module.exports = {
     getAll,
     create,
@@ -76,5 +81,6 @@ module.exports = {
     update,
     setGenre,
     setActor,
-    setDirector
+    setDirector,
+    bulkCreateMovies
 }
