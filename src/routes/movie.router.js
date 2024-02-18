@@ -5,7 +5,7 @@ const routerMovie = express.Router();
 
 routerMovie.route('/')
     .get(getAll)
-    .post(bulkCreateMovies);
+    .post(create);
 
 routerMovie.route('/:id/genres')
     .post(setGenre)

@@ -1,11 +1,11 @@
-const { getAll, getOne, remove, update, bulkCreatedGenres } = require('../controllers/genre.controllers');
+const { getAll, getOne, remove, update, bulkCreatedGenres, create } = require('../controllers/genre.controllers');
 const express = require('express');
 
 const routerGenre = express.Router();
 
 routerGenre.route('/')
     .get(getAll)
-    .post(bulkCreatedGenres);
+    .post(create);
 
 routerGenre.route('/:id')
     .get(getOne)

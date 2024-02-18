@@ -1,11 +1,12 @@
-const { getAll, getOne, remove, update, bulkCreatedActors } = require('../controllers/actor.controllers');
+
+const { getAll, getOne, remove, update, bulkCreatedActors, create } = require('../controllers/actor.controllers');
 const express = require('express');
 
 const routerActor = express.Router();
 
 routerActor.route('/')
     .get(getAll)
-    .post(bulkCreatedActors);
+    .post(create);
 
 routerActor.route('/:id')
     .get(getOne)
